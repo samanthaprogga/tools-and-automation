@@ -1,0 +1,22 @@
+Search and Find
+
+>cat<file>
+>cat *.extension  | Read all files with the same extension
+>cat tasks.*      | Read all files with the same name
+
+
+import * everything
+>cat name?.*      | Read all files with the same name and an optional
+                    letter in the name
+
+
+find .            | List all files and directories in subdirectories
+find . -type f -name 'virus.txt'
+find . -type f -name '*.txt'
+
+More options: -print, -delete
+
+
+
+
+>grep <content> <file>   |find content in the files

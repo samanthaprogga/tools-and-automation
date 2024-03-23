@@ -1,0 +1,48 @@
+Basic commands
+
+> git config --list
+  List config settings
+
+> git init
+  Create a new Git repo
+
+> git status
+  Show the current branch and new/modified files in your repo
+
+> git add <file>
+> git add .
+  Add one or all files to the staging area. Changes to be commmited
+
+  >git rm --cached <file>: remove a file from the staging area
+
+  >git diff <file>
+   Track the difference between the changes made on a file
+
+  >git diff --color-words <file>
+   Show the differences in a clean and simple way(single ine)
+
+  >git commit -mm 'descriptive message
+   Create a snapshot (save point) in your project
+
+   >git log
+   Shows the commmit history(hashcode,date etc)
+
+   >git log --oneline
+   Shows a shorter version of the commit hisory
+
+
+   >git reflog
+   History of the head pointer
+
+
+   Connecting a project and pushing it to Github
+   >start your new project locally(basic folder,files)
+   >run 'git init' (run git status to make sure you have a git repo)
+   >on github, create a new remote repository
+   >copy the commandto add 'origin'(remote) to your local project
+   >run the command (git remote add origin https://github.com/login....)
+   >keep working, adding and commiting
+   >push your changes to git hub(git push -u origin <branch>)
+
+   Do commit right after finising a feather, Do not wait until your project
+   is done to commit and push

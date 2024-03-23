@@ -1,0 +1,46 @@
+Intro to CLI and basic commands
+
+CLI stands for Command Line Interface. It is a program that
+allows users to type text commands instructing the computer to
+ do specific tasks
+
+The command Line is something every developer should learn and 
+implement into their daily routine
+
+Windows: Window Shell / WIndows Terminal /Git Bash
+UNIX (MacOS and Linus) : Terminal
+
+Let's install Git to have access to git bash
+
+
+Listing files and directions
+
+>ls       | list all files and directories in the current directory
+>ls -a    | list all files and directories+ hidden files
+>ls -l    | list files and directories + info about them(type, permission, etc)
+>ls -la   | we can combine options
+>ls -R    | list all files and directories + files in the subdirectors
+
+Permissions: what do these letters mean?
+  d: directory
+  rwx: read, write and execute -> user
+  r-x: read and execute        -> group
+  --x: execute                 -> other
+
+
+  Changing directories
+
+  >pwd      | print the current working directory(the dir you are in)
+  >cd <dir> | go to a specified directory
+  >cd ..    | Return to the previous directory (move one level up)
+  >cd/      | move to the root directory
+  >cd or cd~| move to the home directory
+
+
+  System info
+
+  < uname -a    | print system name and kernel
+  > date        | print current date and time
+  > cal         | print current month's calendar
+  > man (-k ls) | manual
+

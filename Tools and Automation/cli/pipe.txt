@@ -1,0 +1,11 @@
+Pipe
+
+The pipe is a command that lets you use two or more commands such rhar output
+one of command serves as input to the next
+
+>head <file>  |tall -n | show the lines in a particular range
+
+>cat <file>   | sort | uniq | Read a file,sort the data, and print unique elements
+
+The -o option is what tells grep to output each match in a unique line.
+>grep -io 'word' <file> |wc -1 | proper way to count occurences of a word.

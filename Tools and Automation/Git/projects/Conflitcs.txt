@@ -1,0 +1,19 @@
+Conflitcs
+
+
+merge conflict in Git occurs when there are conflicting changes between
+different branches that Git cannot automatically resolve. This conflict arises
+when the changes made to the same part of a file in different branches cannot
+be seamlessly merged together. When attempting to merge these branches, Git
+halts the process and prompts the user to manually resolve the conflicting
+changes by editing the affected files. During this resolution process, the user
+must decide which changes to keep, discard, or modify, and then mark the
+conflict as resolved. Once all conflicts are resolved, the user can continue
+the merge process by committing the changes, finalizing the merge, and updating
+the repository with the resolved code. Resolving merge conflicts effectively is
+crucial to maintaining a clean and functional codebase when collaborating on
+projects with multiple contributors
+Fixing a conflict locally
+01. Initialize a new Git repo
+02. Run-git status to confirm your new repo
+03. On main, create a file and add content to it

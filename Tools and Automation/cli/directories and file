@@ -1,0 +1,48 @@
+Creating directories and files
+
+## MAKE A DIRECTORY ##
+
+mkdir <desired name>
+for example: mkdir test   // The command mkdir test make a new directory named "test" in the current working directory.
+
+// we can also make two or more directory together 
+> mkdir one two three  // making all three directory together
+
+
+## REMOVE A DIRECTORY ##
+ 1. > rmdir <name of directory> or rm -d | remove an empty directory
+ 2. > rm-r <dir> | remove a non-empty directory (remove all files recursively)
+
+
+## CREATING FILES ##
+> touch <file.ext> | create a new (empty) file
+> echo 'content' > file name  | redirect the output to a file (overwrite the file)  // between content and file name (>) this is necesarry
+> echo 'content' >> <file> | append content to the end of the file  // (>>) appending refers to adding new content to the end of an existing file. 
+
+
+## MOVE AND RENAME THE FILES AND DIRECTORIES ##
+> mv  <current_name> <new_name> | rename a file
+
+for example:
+hcman@dhillxn_mn MINGW64 ~/Desktop/MITT/INTRODUCTION TO WEB  DEVELOPMENT/Tools and Automation/Man (master)
+$ cd ..
+hcman@dhillxn_mn MINGW64 ~/Desktop/MITT/INTRODUCTION TO WEB  DEVELOPMENT/Tools and Automation (master)
+$ ls
+CLI/  Files/  Man/
+hcman@dhillxn_mn MINGW64 ~/Desktop/MITT/INTRODUCTION TO WEB  DEVELOPMENT/Tools and Automation (master)
+$ mv Man/manpreet.txt Files/api
+
+
+
+> cat <file>       |  display the content of a file (cd di help nl phla jma of file dh folder tk ponch jh)
+> tac <file>       |  display the content of file in reverse order 
+> less <file>      |  less is useful when we have long content in our file it print that content in terminal in controlled manner
+> head <file>      |  display the frist 10 lines of a file
+> head -n<file>    |  display the first n lines  of a file
+> tail -r<file>    |  display the content of a file in reverse order (Mac)
+> tail -n<file>    |  display the last n of a file
+> sort <file>      |  sort the content of a file  (put words alphabetically and numbers as well it put numbers above then words)
+
+
+* Be careful using the -f (force) option. you might delete things that you
+are not supposed to

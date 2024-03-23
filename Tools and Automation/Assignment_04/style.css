@@ -1,0 +1,27 @@
+/* Add the following CSS styles */
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: left; /* Align text to the left */
+}
+
+.personal-details,
+.projects-section {
+    margin: 20px;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.projects-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.project {
+    margin-bottom: 20px;
+}

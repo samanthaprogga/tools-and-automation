@@ -1,0 +1,182 @@
+## UNDERSTANDING FILE AND DIRECTORY PERMISSIONS:
+These control who can access, modify, or execute a file or directory, providing a layer of security and control over your data.
+
+To change file and directory permissions, use the command 'chmod' (change mode).
+The owner of a file can change the permissions for user (u), group(g), and others
+(o), by adding (+) or substracting (-) the read, write, and execute permissions
+
+Two methods
+   -symbolic methods
+   -absolute form
+
+Symbolic method (add remove and set)
+
+   Access class           Operator         Access type
+   u (user)             + (add access)      r(read)
+   g (group)            -(remove access)    w(write)  
+   o (other)            =(set access)       x(execute)
+   a (all)
+
+
+   Absolute form (set permissions)
+
+   Read      4
+   Write     2
+   Execute   1
+   None      0
+
+
+
+   DEEP EXPLANATION
+
+Permissions: These control who can access, modify, or execute a file or directory, providing a layer of security and control over your data.
+
+Types of Permissions:
+
+Read (r): Allows users to view the contents of a file or list the contents of a directory.
+Write (w): Allows users to modify or delete a file, or create or delete files within a directory.
+Execute (x): Allows users to run a program file or enter a directory.
+User Classes:
+
+User (u): The owner of the file or directory.
+Group (g): Users who belong to the same group as the file or directory.
+Others (o): All other users on the system.
+Using the chmod Command:
+
+Purpose: The chmod command is used to change file and directory permissions in Unix-like systems.
+
+Syntax:
+
+Bash
+chmod [options] <permissions> <file or directory>
+Use code with caution.
+Options:
+
+-R: Recursively change permissions for files and directories within a directory.
+Setting Permissions:
+
+WAY :
+1.Use a combination of u, g, and o to specify which user class to modify.
+2.Use + to add permissions or - to remove permissions.
+3.Use r, w, and x to specify the permissions to change.
+
+Examples:
+
+Grant read and write permissions to the owner only:
+Bash
+chmod u+rw file.txt  (User have permissions to read and write)
+
+
+Grant read access to everyone:
+Bash
+chmod ugo+r report.pdf (user group others all have permission to read)
+
+
+Remove write permissions from the group:
+Bash
+chmod g-w script.sh (group use to write)
+
+Make a script executable for everyone:
+Bash
+chmod ugo+x myprogram.py (all can execute)
+
+
+## OCTAL NOTATION
+(e.g., chmod 755 file.txt)
+
+Efficiency: Octal notation is a way to represent permissions using numbers, offering a more compact way to set multiple permissions at once.
+Breakdown:
+Each digit (0-7) represents a set of permissions:
+First digit: Permissions for the owner (u)
+Second digit: Permissions for the group (g)
+Third digit: Permissions for others (o)
+
+Each digit is calculated by summing the value of the desired permissions:
+Read (r): Value 4
+Write (w): Value 2
+Execute (x): Value 1
+
+Example: (rwxr-x-w-)
+chmod 755 file.txt means:
+Owner: Read, write, execute (7 = 4 + 2 + 1)
+Group: Read, execute (5 = 4 + 1)
+Others: Read, execute (5 = 4 + 1)
+
+
+
+Key Points:
+
+Only the owner of a file or directory, or the root user, can change its permissions.
+Consider using octal notation (e.g., chmod 755 file.txt) for more concise permission setting.
+Use ls -l to view current permissions before and after using chmod.
+Be cautious when modifying permissions, especially for sensitive files or directories.
+
+
+
+
+class exercise 1
+1. create a directory and add 3 files to it (one.txt, two.txt, three.txt)
+change permissions using bot methods
+one -> r-x--xrwx
+two -> -w-rwxr--
+three -> rwx--x-w-
+directory -> -wx r-- r-x
+
+
+
+
+
+class exercise 2
+find and grep. check out the difference between these two, and try to use them
+to find files (location) and content files
+
+grep -> 'var' -> multiple 'js' files (*.js) 
+
+
+FIND:
+
+Example 1: Finding Files Only
+Scenario: You want to find all directories named "logs" in the current directory and its subdirectories.
+
+Command:
+
+Bash
+find . -type d -name "logs"
+Use code with caution.
+Explanation:
+
+find .: Starts the search from the current directory (represented by .).
+-type d: Specifies that we're searching for directories only (using the -type option with d).
+-name "logs": Specifies the directory name to search for (using the -name option).
+Output:
+
+The output will list all the full paths of directories named "logs" found within the current directory and its subdirectories. For example:
+
+/home/user1/data/logs
+/home/user1/projects/logs/backup
+
+
+
+Example 1: Finding Files and Content
+Scenario: You want to find all files named "config.txt" in your home directory and any subdirectories, and then check if any of them contain the word "server."
+
+Combined Command:
+
+Bash
+find ~/ -name "config.txt" -exec grep "server" {} \;
+Use code with caution.
+Explanation:
+
+find / -name "config.txt": This part uses the find command to search for files named "config.txt" starting from your home directory ().
+-exec grep "server" {} \;: This part tells find what to do with each file it finds.
+-exec: Instructs find to execute a command for each found file.
+grep "server" {}: The command to execute is grep with the following arguments:
+"server": The text pattern to search for.
+{}: This represents the name of the currently found file.
+\;: Terminates the command to be executed.
+Output:
+
+If any "config.txt" files contain the word "server," the output will show the line containing "server" along with the filename for each matching file. For example:
+
+/home/user1/data/config.txt:server=localhost
+/home/user1/projects/config.txt:This server is running on port 8080.

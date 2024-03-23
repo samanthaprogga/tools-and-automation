@@ -1,0 +1,58 @@
+Intro to git
+
+what is git?
+
+Git is a version control system. Version control systems are a 
+catagory of software tools that help a software team to manage changes to
+source code over time. If a mistake is made, developers can turn back the
+clock and compare earlier versions of the code to help fix the mistake while
+minimizing disruption to all team members
+
+Git helps us to avoid nightmares like this : 'Project 1.1 , Project 2.2, Project-final'
+
+
+Why use Git?
+
+1. Store revisions in aproject history in just one directory
+2. Rewind to any revision in the project we wanted to
+3. Work on new features without messing up the new codebase
+4. Easily collaborate with others
+
+Config 
+
+>git config --list | Check configuration
+>git config --global user.name <your name>
+>git config --global user.email <your email>
+>git config --global init.defaultBranch main
+
+
+
+Repository
+
+Container for a project's folder
+
+>Go to your project's folder
+>git init (create a Git repo in specified directory)
+This command adds a  hidden directory (.git) to your project
+
+Stages
+ Untracked: new files (not tracked yet)
+ Modified: changed files; not commited
+ Staging: files we want to commit(files added)
+ Commited: files in the staging area area added to the commit when we make one
+
+Commit
+ Your project's 'save-point'. Captures a snapshot of the projects's currently
+ stagesd changes. Comited snapshots can be thought of as 'safe' versions of a 
+ project.
+
+Branches
+ In Git, branches are part of your everyday devepment process. Git branches 
+ are effectively a pointer to a snapshot of your changes. When you want to add
+ a new feature or fix a bug, you spawn a new branch to encapsulate your changes
+
+
+ HEAD
+  Head always refers to the most recent commit on the current branch. When you
+  change branches, Head is updated to refers
+ 
